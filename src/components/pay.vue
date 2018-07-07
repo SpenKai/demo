@@ -2,7 +2,7 @@
    <div class="cart-product-info">
         <a class="btn-buy fr" href="javascript:;">立即支付</a>
         <p class="fr product-total">￥<span></span></p>
-        <p class="fl check-num"><span></span>张票总计：</p>
+        <p class="fl check-num"><span>{{counter}}</span>张票总计：</p>
     </div>
 </template>
 <style>
@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  
+
         
 }
 </script>

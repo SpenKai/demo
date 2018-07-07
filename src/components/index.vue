@@ -1,11 +1,12 @@
 <template>
     <div class="page-shopping-cart" id="shopping-cart">
-          <div class="cart-product-title clearfix">
+        <div class="cart-product-title clearfix">
               选择票种
-            </div>
-    <selectpicket></selectpicket>
+        </div>
+    <selectpicket @counter="getCounter"></selectpicket>
     <info></info>
     <pay></pay>
+    
     </div>
 </template>
 
@@ -65,6 +66,11 @@ export default {
         pay,
         info
     },
+    methods :{
+        getCounter(msg){
+            this.couter = msg
+        }
+    }
    
 }
 </script>

@@ -16,7 +16,17 @@
                     <p class="red-text"><span class="price-text">{{item.pro_price.toFixed(2)}}</span>元</p>
                 </td>
                 <td class="td-check">
-                    <input type="radio" name="sel" @click="item.select=!item.select" :class="{'check-true':item.select}">
+                    <input type="radio" name="sel" @click="item.select=!item.select" :class="{'check-true':item.select}" >
+                </td>
+            </tr>
+            <tr>
+                <td class="td-num">
+                    <div class="product-num fr">
+                        <button v-on:click="counter -= 1" class="num-reduce num-do fl">-</button>
+                            
+                            <input type="text" @change="setCounter" v-model="counter" class="num-input">
+                        <button v-on:click="counter += 1" class="num-add num-do fr">+</button>
+                    </div>
                 </td>
             </tr>
             </tbody>
@@ -54,7 +64,39 @@
         .page-shopping-cart .cart-product table .td-product .product-info {
             display: inline-block;
             vertical-align: middle;
+        }        
+        .page-shopping-cart .cart-product table .product-num {
+            border: 1px solid #e3e3e3;
+            display: inline-block;
+            text-align: right;
+        }  
+        .page-shopping-cart .cart-product table .product-num .num-do {
+            width: 24px;
+            height: 28px;
+            display: block;
+            background: #f7f7f7;
         }
+        
+        .page-shopping-cart .cart-product table .product-num .num-reduce {
+            display: block;
+            width: 25px;
+            height: 25px;
+            margin: 0 auto ;
+        }
+        .page-shopping-cart .cart-product table .product-num .num-add  {
+            display: block;
+            width: 25px;
+            height: 25px;
+            margin: 0 auto ;
+        }
+        .page-shopping-cart .cart-product table .product-num .num-input {
+            width: 42px;
+            height: 28px;
+            line-height: 28px;
+            border: none;
+            text-align: center;
+        }
+        
 </style>
 
 <script>
@@ -83,9 +125,21 @@ export default {
                     pro_price: 999.99
                 }
             ],
+            counter : '0'
             
         }
     },
-    
-}
+    che:function(){
+        var  _this = this;
+        this.productList.map(function(item){
+            _this.$set(item,'select',true)
+        })
+    },
+    methods :{
+        setCounter : function(){
+            this.$emit('counter',this.counter)
+        }
+    }
+            
+}  
 </script>
