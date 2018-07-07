@@ -2,7 +2,7 @@
     <div class="cart-product clearfix">
         <table>
             <tbody>
-            <!--遍历的时候带上索引-->
+            
             <tr v-for="(item,index) in productList">
                 
                 <td class="td-product">
