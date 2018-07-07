@@ -86,14 +86,14 @@
         
         .page-shopping-cart .cart-product table .product-num .num-reduce {
             display: block;
-            width: 25px;
-            height: 25px;
+            width: 28px;
+            height: 28px;
             margin: 0 auto ;
         }
         .page-shopping-cart .cart-product table .product-num .num-add  {
             display: block;
-            width: 25px;
-            height: 25px;
+            width: 28px;
+            height: 28px;
             margin: 0 auto ;
         }
         .page-shopping-cart .cart-product table .product-num .num-input {
