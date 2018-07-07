@@ -20,8 +20,15 @@
                 </td>
             </tr>
             <tr>
+                <td class="td-product">
+                    <div class="fl">
+                        <h3>份数</h3>
+                    </div>
+                </td>
                 <td class="td-num">
+                    
                     <div class="product-num fr">
+                        
                         <button v-on:click="counter >0?counter--:''" class="num-reduce num-do fl">-</button>
                             
                             <input type="text" @change="setCounter" v-model="counter" class="num-input">
@@ -67,8 +74,8 @@
         }        
         .page-shopping-cart .cart-product table .product-num {
             border: 1px solid #e3e3e3;
-            display: inline-block;
             text-align: right;
+            margin-right:0; 
         }  
         .page-shopping-cart .cart-product table .product-num .num-do {
             width: 24px;
