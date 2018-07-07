@@ -16,16 +16,16 @@
                     <p class="red-text"><span class="price-text">{{item.pro_price.toFixed(2)}}</span>元</p>
                 </td>
                 <td class="td-check">
-                    <input type="radio" name="sel" @click="item.select=!item.select" :class="{'check-true':item.select}" >
+                    <input type="radio" name="sel"  >
                 </td>
             </tr>
             <tr>
                 <td class="td-num">
                     <div class="product-num fr">
-                        <button v-on:click="counter -= 1" class="num-reduce num-do fl">-</button>
+                        <button v-on:click="counter >0?counter--:''" class="num-reduce num-do fl">-</button>
                             
                             <input type="text" @change="setCounter" v-model="counter" class="num-input">
-                        <button v-on:click="counter += 1" class="num-add num-do fr">+</button>
+                        <button v-on:click="counter++" class="num-add num-do fr">+</button>
                     </div>
                 </td>
             </tr>
@@ -128,12 +128,6 @@ export default {
             counter : '0'
             
         }
-    },
-    che:function(){
-        var  _this = this;
-        this.productList.map(function(item){
-            _this.$set(item,'select',true)
-        })
     },
     methods :{
         setCounter : function(){
