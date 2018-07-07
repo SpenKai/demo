@@ -17,6 +17,29 @@
             margin: 0;
             padding: 0;
         }
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix:after {
+            content: '.';
+            display: block;
+            overflow: hidden;
+            visibility: hidden;
+            font-size: 0;
+            line-height: 0;
+            width: 0;
+            height: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
     </style>
 </head>
 <body>
